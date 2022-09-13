@@ -1,21 +1,25 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-//firebase needs thses to figure out on how we r connecting to database
-//configuring the app on the front end to link with our firebase which we created on website
-var firebaseConfig = {
-  apiKey: "AIzaSyCJX6wjtfnxAdGFHdRjfGha8BrSzqPbLpE",
-  authDomain: "web-game-56e77.firebaseapp.com",
-  databaseURL: "https://web-game-56e77.firebaseio.com",
-  projectId: "web-game-56e77",
-  storageBucket: "web-game-56e77.appspot.com",
-  messagingSenderId: "491481196457",
-  appId: "1:491481196457:web:73c64528fe5b643f2c06b8"
-};
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+    apiKey: "AIzaSyBa9UrS6dOUZry33QMnZfSKUFsDUBV6Zj0",
+    authDomain: "flappybird-1efe3.firebaseapp.com",
+    databaseURL: "https://flappybird-1efe3-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "flappybird-1efe3",
+    storageBucket: "flappybird-1efe3.appspot.com",
+    messagingSenderId: "993302118393",
+    appId: "1:993302118393:web:468d8426b80ae5e1f14728",
+    measurementId: "G-2DZZN436CG"
+  };
 // Initialize Firebase
-var app = firebase.initializeApp(firebaseConfig);
-        db = firebase.firestore(app);
-        firebase.firestore().settings({
-            cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
-        });
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
 
 
    const submitPlayers = document.querySelector("#submit_btn");
